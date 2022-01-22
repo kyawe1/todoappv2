@@ -1,0 +1,11 @@
+<div class='d-flex align-items-baseline justify-content-md-between'>
+    <div class='ml-2 my-2 p-2'>
+        <button class='btn btn-secondary'>create</button>
+    </div>
+    <div class=''>
+        <app-search-bar (searchfun)="OnSearch($event)"></app-search-bar>
+    </div>
+</div>
+<app-todo-create [hidden]="showDetail" (create)="OnCreate($event)"></app-todo-create>
+<app-todo-list [sampledata]="todolist" [hidden]="showDetail" (handleclick)="clicker($event)"></app-todo-list>
+<app-todo-detail [hidden]="!showDetail" [todo]="todoData" (close)="close()" (edit)="OnUpdate($event)"></app-todo-detail>

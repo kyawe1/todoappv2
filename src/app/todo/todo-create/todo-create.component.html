@@ -1,0 +1,13 @@
+<form class='m-2 p-2' [formGroup]=form >
+    <div class='m-1'>
+        <label class='form-label'>ToDo Name</label>
+        <input type='text' class='form-control' formControlName="todo_name"/>
+    </div>
+    <div class='m-1'>
+        <input type='checkbox' class='form-check-input' formControlName="compeleted"/>
+        <label class='form-check-label'>Compelete</label>
+    </div>
+    <input type='submit' value="Submit" (click)="OnCreate()"/>
+</form>
+
+

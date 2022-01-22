@@ -1,0 +1,10 @@
+<div *ngFor="let i of sampledata">
+    <div class='m-1 p-2 rounded border border-secondary'  (click)="Onclick(i)">
+        <div>
+        <div class='h3 lh-lg text-decoration-none'>{{i.todo_name}}</div>
+        <div class='m-1'>
+            <input type='checkbox' class='form-check-input disabled' [checked]=i.compeleted [disabled]=true/>
+        </div>
+    </div>
+</div>
+<div [hidden]="sampledata.length!=0">Nothing Found</div>

@@ -1,0 +1,20 @@
+<div *ngIf="todo">
+    <div class='d-flex flex-row-reverse me-2 py-2 my-2'>
+        <div class=''>
+            <button class='btn btn-primary mx-2' (click)="OnEdit()">Edit</button>
+            <button class='btn btn-success mx-2' (click)="Onclose()">Close</button>
+        </div>
+    </div>
+    <form class='m-2 p-2' (ngSubmit)="OnSubmit()">
+        <div class='m-1'>
+            <label class='form-label'>ToDo Name</label>
+            <input type='text' class='form-control' [(ngModel)]=todo.todo_name [ngModelOptions]="{standalone:true}" [disabled]=!is_edit/>
+        </div>
+        <div class='m-1'>
+            <input type='checkbox' class='form-check-input' [(ngModel)]=todo.compeleted [ngModelOptions]="{standalone:true}" [disabled]=!is_edit/>
+            <label class='form-check-label'>Compelete</label>
+        </div>
+        <input type='submit' value="Submit" [hidden]=!is_edit/>
+    </form>
+    
+</div>
